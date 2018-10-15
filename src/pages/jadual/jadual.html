@@ -1,0 +1,61 @@
+<ion-header>
+    <ion-navbar color="primary">
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+        <ion-title>Jadual</ion-title>
+      </button>
+      </ion-navbar>
+      </ion-header>
+
+
+<ion-content padding>
+
+  <div *ngFor= "let jadual of jaduals"> </div>
+  <div *ngFor= "let sessions of sessions"> </div> 
+
+  <ion-list>
+    <ion-item>
+      <ion-label>Sesi</ion-label>
+      <ion-select (ionChange)="setSession(data)" [(ngModel)]="data" >
+        <div *ngFor="let jadual of jaduals">
+            <ion-option value="{{jadual.sesi}}">{{jadual.sesi}}</ion-option>
+        </div>
+        
+      </ion-select>
+    </ion-item>
+  </ion-list> 
+
+
+  <ion-list>
+    <ion-item *ngIf="classes">
+      <ion-label>Kelas</ion-label>
+      <ion-select (ionChange)="setClass(Kelas)" [(ngModel)]="Kelas">
+        <div *ngFor="let class of classes">
+          <ion-option value="{{class.kelas}}">{{class.kelas}}</ion-option>
+        </div>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+
+
+
+
+
+  <!-- <h2>HTML Table</h2>
+
+  <table>
+    <tr>
+      <th>jadual</th>
+      <th>Contact</th>
+      <th>Country</th>
+    </tr>
+    <tr *ngFor="let jadual of jaduals">
+      <td>{{jadual.hari}}</td>
+      <td>{{jadual.sesi}}</td>
+    </tr>
+    <tr>
+      
+  </table>
+  
+  </ion-content>
+      '; -->
