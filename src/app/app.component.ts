@@ -7,7 +7,9 @@ import { Keyboard } from '@ionic-native/keyboard';
 
 import { FrontPage} from "../pages/front/front"
 import { HomePage } from "../pages/home/home";
+import { HomepelajarPage } from "../pages/homepelajar/homepelajar";
 import { LoginPage } from "../pages/login/login";
+import { LoginpelajarPage } from "../pages/loginpelajar/loginpelajar";
 import { KehadiranPage } from "../pages/kehadiran/kehadiran";
 import { JadualPage} from "../pages/jadual/jadual";
 import { PelajarPage} from "../pages/pelajar/pelajar";
@@ -34,6 +36,7 @@ export class MyApp {
 userData:any;
 username:any;
 userRole:any;
+userPelajar:any;
 
   constructor(
     public platform: Platform,
@@ -48,7 +51,6 @@ userRole:any;
       {title: 'Kehadiran', component: KehadiranPage, icon: 'list'},
       {title: 'Jadual', component: JadualPage, icon: 'heart'},
       {title: 'Pelajar', component: PelajarPage, icon: 'infinite'},
-      // {title: 'Kehadiran2', component: Kehadiran2Page, icon: 'heart'}
     ];
   }
 
@@ -68,6 +70,11 @@ userRole:any;
       this.username=this.userData.nama_pengajar;
       this.userRole=this.userData.email_pengajar;
 
+      
+      this.userPelajar = JSON.parse(window.localStorage.getItem('userPelajar'));
+      this.username=this.userPelajar.nama_pelajar;
+      this.userRole=this.userPelajar.id_pelajar;
+
 
       //*** Control Keyboard
       // this.keyboard.disableScroll(true);
@@ -83,7 +90,8 @@ userRole:any;
 
   logout() {
     window.localStorage.removeItem('userData');
-    this.nav.setRoot(LoginPage);
+    window.localStorage.removeItem('userPelajar');
+    this.nav.setRoot(FrontPage);
   }
 
   editprofile() {

@@ -18,7 +18,9 @@ import {MyApp} from "./app.component";
 import {SettingsPage} from "../pages/settings/settings";
 import {FrontPage} from "../pages/front/front"
 import {HomePage} from "../pages/home/home";
+import {HomepelajarPage} from "../pages/homepelajar/homepelajar";
 import {LoginPage} from "../pages/login/login";
+import { LoginpelajarPage } from "../pages/loginpelajar/loginpelajar";
 import {NotificationsPage} from "../pages/notifications/notifications";
 import {KehadiranPage} from "../pages/kehadiran/kehadiran";
 import {JadualPage} from "../pages/jadual/jadual";
@@ -37,7 +39,9 @@ import { EditPage } from '../pages/edit/edit';
     SettingsPage,
     FrontPage,
     HomePage,
+    HomepelajarPage,
     LoginPage,
+    LoginpelajarPage,
     NotificationsPage,
     KehadiranPage,
     JadualPage,
@@ -63,7 +67,9 @@ import { EditPage } from '../pages/edit/edit';
     SettingsPage,
     FrontPage,
     HomePage,
+    HomepelajarPage,
     LoginPage,
+    LoginpelajarPage,
     NotificationsPage,
     KehadiranPage,
     JadualPage,

@@ -1,6 +1,6 @@
 import {Component} from "@angular/core";
 import {NavController} from "ionic-angular";
-import {LoginPage} from "../login/login";
+import {FrontPage} from "../front/front";
 
 
 @Component({
@@ -14,6 +14,6 @@ export class SettingsPage {
 
   // logout
   logout() {
-    this.nav.setRoot(LoginPage);
+    this.nav.setRoot(FrontPage);
   }
 }

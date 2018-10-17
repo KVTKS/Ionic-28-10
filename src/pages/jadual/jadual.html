@@ -16,7 +16,7 @@
   <ion-list>
     <ion-item>
       <ion-label>Sesi</ion-label>
-      <ion-select (ionChange)="setSession(data)" [(ngModel)]="data" >
+      <ion-select (ionChange)="setSession(data)" [(ngModel)]="da" >
         <div *ngFor="let jadual of jaduals">
             <ion-option value="{{jadual.sesi}}">{{jadual.sesi}}</ion-option>
         </div>

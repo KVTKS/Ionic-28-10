@@ -1,17 +1,18 @@
 import {Component} from "@angular/core";
 import {NavController, AlertController, ToastController, MenuController} from "ionic-angular";
 import { AuthserviceProvider } from '../../providers/authservice/authservice';
-import {HomePage} from "../home/home";
+import {HomepelajarPage} from "../Homepelajar/Homepelajar";
+
 
 
 @Component({
-  selector: 'page-login',
-  templateUrl: 'login.html'
+  selector: 'page-loginpelajar',
+  templateUrl: 'loginpelajar.html'
 })
-export class LoginPage {
+export class LoginpelajarPage {
 
   responseData:any;
-  userData = { email: "", password: "",};
+  userPelajar = { nama_pelajar: "", no_ndp: "",};
 
   constructor(public nav: NavController, public forgotCtrl: AlertController, public menu: MenuController, public toastCtrl: ToastController,public authService: AuthserviceProvider) {
     this.menu.swipeEnable(false);
@@ -20,16 +21,16 @@ export class LoginPage {
   
   // login and go to home page
   login() {
-    if (this.userData.email && this.userData.password) {
-      console.log(this.userData);
-      this.authService.postData(this.userData, "login").then(
+    if (this.userPelajar.nama_pelajar && this.userPelajar.no_ndp) {
+      console.log(this.userPelajar);
+      this.authService.postData(this.userPelajar, "login").then(
         result => {
           this.responseData = result;
           console.log(this.responseData);
           if (this.responseData.code === 200) {
-            localStorage.setItem("userData", JSON.stringify(this.responseData.data));
+            localStorage.setItem("userPelajar", JSON.stringify(this.responseData.data));
             console.log(this.responseData.data);
-            this.nav.setRoot(HomePage);
+            this.nav.setRoot(HomepelajarPage);
           } else {
             let alert = this.forgotCtrl.create({
               title: "Login failed!",
@@ -92,3 +93,4 @@ export class LoginPage {
   }
 
 }
+
