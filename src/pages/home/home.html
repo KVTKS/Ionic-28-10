@@ -8,6 +8,9 @@
       <strong>Home</strong>
     </ion-title>
     <ion-buttons end>
+
+
+
       <button ion-button tappable (click)="presentNotifications($event)">
         <ion-icon name="notifications"></ion-icon>
       </button>
@@ -19,9 +22,18 @@
 </ion-header>
 
 <ion-content padding class="animated fadeIn common-bg">
-  <h1><strong>SELAMAT DATANG {{username.nama_pengajar}}</strong></h1>
+  <h1><strong>SELAMAT DATANG </strong></h1>
 
-  <ion-list>
+  <ion-card>
+    <ion-card-header>
+      {{username.nama_pengajar}}
+    </ion-card-header>
+    <ion-card-content>
+      <!-- {{userRole.jawatan}} -->
+    </ion-card-content>
+  </ion-card>
+
+  <!-- <ion-list>
     <ion-item>
       <ion-avatar item-start>
         <img src="../assets/img/profile-circle.png">
@@ -30,6 +42,6 @@
       <h3>Don't Know What To Do!</h3>
       <p>I've had a pretty messed up day. If we just...</p>
     </ion-item>
-  </ion-list>
+  </ion-list> -->
 
 </ion-content>

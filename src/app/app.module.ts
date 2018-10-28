@@ -1,5 +1,4 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { IonicStorageModule } from '@ionic/storage';
@@ -20,12 +19,12 @@ import {FrontPage} from "../pages/front/front"
 import {HomePage} from "../pages/home/home";
 import {HomepelajarPage} from "../pages/homepelajar/homepelajar";
 import {LoginPage} from "../pages/login/login";
-import { LoginpelajarPage } from "../pages/loginpelajar/loginpelajar";
+import {LoginpelajarPage} from "../pages/loginpelajar/loginpelajar";
 import {NotificationsPage} from "../pages/notifications/notifications";
 import {KehadiranPage} from "../pages/kehadiran/kehadiran";
 import {JadualPage} from "../pages/jadual/jadual";
 import {PelajarPage} from "../pages/pelajar/pelajar";
-import { EditPage } from '../pages/edit/edit';
+import {GurugantiPage} from "../pages/guruganti/guruganti";
 // import services
 // end import services
 // end import services
@@ -46,7 +45,7 @@ import { EditPage } from '../pages/edit/edit';
     KehadiranPage,
     JadualPage,
     PelajarPage,
-    EditPage,
+    GurugantiPage,
   ],
   imports: [
     BrowserModule,
@@ -74,7 +73,7 @@ import { EditPage } from '../pages/edit/edit';
     KehadiranPage,
     JadualPage,
     PelajarPage,
-    EditPage,
+    GurugantiPage,
   ],
   providers: [
     StatusBar,

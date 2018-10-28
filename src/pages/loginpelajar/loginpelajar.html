@@ -14,10 +14,10 @@
     <form class="list-form">
       <ion-item>
         <ion-label floating>
-          <ion-icon name="email" item-start class="text-primary"></ion-icon>
+          <ion-icon name="emails" item-start class="text-primary"></ion-icon>
           Nama Pelajar
         </ion-label>
-        <ion-input type="text" [(ngModel)]="userPelajar.nama_pelajar" [ngModelOptions]="{standalone: true}"></ion-input>
+        <!-- <ion-input type="text" [(ngModel)]="userPelajar.nama_pelajar" [ngModelOptions]="{standalone: true}"></ion-input> -->
       </ion-item>
 
       <ion-item>
@@ -25,11 +25,9 @@
           <ion-icon name="lock" item-start class="text-primary"></ion-icon>
           No Ndp
         </ion-label>
-        <ion-input type="password" [(ngModel)]="user.no_ndp" [ngModelOptions]="{standalone: true}"></ion-input>
+        <!-- <ion-input type="password" [(ngModel)]="user.no_ndp" [ngModelOptions]="{standalone: true}"></ion-input> -->
       </ion-item>
     </form>
-
-    <p text-right ion-text color="secondary" tappable (click)="forgotPass()"><strong>Forgot Password?</strong></p>
 
     <div>
       <button ion-button icon-start block color="dark" tappable (click)="login()">

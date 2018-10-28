@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { LoginPage } from '../login/login';
+import { LoginpelajarPage } from '../loginpelajar/loginpelajar';
 
 /**
  * Generated class for the FrontPage page.
@@ -24,5 +25,9 @@ export class FrontPage {
   }
 Login () {
   this.nav.push(LoginPage);
+}
+Login2 () {
+  this.nav.push(LoginpelajarPage);
+  
 }
 }

@@ -62,6 +62,7 @@ export class KehadiranPage {
     
   }
 
+
   setSession(data) {
     this.http.get(this.Url2+'/?id='+data+"&idp="+this.userData.id_pengajar)
     .map(res => res.json())
@@ -72,9 +73,9 @@ export class KehadiranPage {
     this.session = data;
   }
 
-  // onCancelSession(event) {
-  //   this.sessions = [];
-  // }
+  onCancelSession(event) {
+    this.sessions = [];
+  }
 
   setClass(data) {
     this.http.get(this.Url3+'/?sesi='+this.session+"&kelas="+data)

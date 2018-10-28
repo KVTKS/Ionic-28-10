@@ -1,13 +1,9 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map'; 
-/**
- * Generated class for the JadualPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { AuthserviceProvider } from '../../providers/authservice/authservice';
+
 
 @IonicPage()
 @Component({
@@ -15,29 +11,37 @@ import 'rxjs/add/operator/map';
   templateUrl: 'jadual.html',
 })
 export class JadualPage {
+  userData:any;
   Url: any;
-  jaduals:any;
+  jadual:any;
   sessions:any;
 
-  constructor(public navCtrl: NavController, public http:Http) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public http:Http, public authService: AuthserviceProvider, public forgotCtrl: AlertController ){
 
+    this.Url = this.authService.serverAPI + 'api/jadual';
  
     this.http.get(this.Url)
     .map(res => res.json())
     .subscribe(data => {
-      this.sessions = data;
-      console.log(data);
-    });
-  
-    
-    
-    this.http.get(this.Url)
-    .map(res => res.json())
-    .subscribe(data => {
-      this.jaduals = data;
+      this.jadual = data;
       console.log(data);
     });
 
+    this.userData = JSON.parse(window.localStorage.getItem('userData'));
+    console.log('username ',this.userData.nama_pengajar);
+
+
+  }
+
+  setsesi(data) {
+    this.http.get(this.Url+'/?id_pen='+data+"&idj="+this.userData.sesi)
+    .map(res => res.json())
+    .subscribe(data => {
+      this.jadual = data;
+      console.log(data);
+    });
+    this.jadual = data;
+  
   }
 
   ionViewDidLoad() {
